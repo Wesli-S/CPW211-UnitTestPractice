@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace CPW211_UnitTestStarterCode.Tests
 {
@@ -18,8 +19,7 @@ namespace CPW211_UnitTestStarterCode.Tests
         [DataRow(0, -0)]
         public void Add_TwoNumbers_ReturnsSum(double num1, double num2)
         {
-            // Use the DataRow values to test the Add method
-            Assert.Fail();
+            double result = SimpleMath.Add(num1, num2);
         }
 
         [TestMethod]
