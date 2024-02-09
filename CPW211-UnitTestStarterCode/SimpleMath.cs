@@ -32,7 +32,7 @@ namespace CPW211_UnitTestStarterCode
         {
             if (a == 0 || b == 0)
             {
-                throw new DivideByZeroException("ERROR: Cannot divide by 0");
+                throw new ArgumentException("Denominator cannot be zero");
             }
             return a / b;
         }

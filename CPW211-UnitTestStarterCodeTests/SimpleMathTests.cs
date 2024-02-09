@@ -23,22 +23,43 @@ namespace CPW211_UnitTestStarterCode.Tests
         }
 
         [TestMethod]
-        public void Multiply_TwoNumbers_ReturnsProduct()
+        [DataRow(5, 10)]
+        [DataRow(2, 6)]
+        [DataRow(7, 9)]
+        [DataRow(6, -4)]
+        public void Multiply_TwoNumbers_ReturnsProduct(double num1, double num2)
         {
-            // Use a few pairs of values to test the Multiply method
-            Assert.Fail();
+            double result = SimpleMath.Multiply(num1, num2);
         }
 
         [TestMethod]
-        public void Divide_DenominatorZero_ThrowsArgumentException()
+        [DataRow(5, 0)]
+        [DataRow(0, 500)]
+        public void Divide_DenominatorZero_ThrowsArgumentException(double num1, double num2)
         {
             // Divide by zero should throw an argument exception with a message
             // "Denominator cannot be zero"
-            Assert.Fail();
+            Assert.ThrowsException<ArgumentException>(() => SimpleMath.Divide(num1, num2));
         }
 
         // TODO: Test Divide method with two valid numbers
+        [TestMethod]
+        [DataRow(10, 5)]
+        [DataRow(100, 4)]
+        [DataRow(63, 7)]
+        public void Divide_TwoNumbers_ReturnsProduct(double num1, double num2)
+        {
+            double result = SimpleMath.Divide(num1, num2);
+        }
 
         // TODO: Test subtract method with two valid numbers
+        [TestMethod]
+        [DataRow(10, 5)]
+        [DataRow(4, 4)]
+        [DataRow(1000000000000000000, 1)]
+        public void Subtract_TwoNumbers_ReturnsProduct(double num1, double num2)
+        {
+            double result = SimpleMath.Subtract(num1, num2);
+        }
     }
 }
